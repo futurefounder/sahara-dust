@@ -148,7 +148,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const isRedirectedFromDE = urlParams.get("from") === "de";
 
-      if (currentDomain === "sahara-staub.de") {
+      if (currentDomain === "sahara-staub.de" || isRedirectedFromDE) {
         setLanguage("de");
       } else {
         setLanguage("en");
