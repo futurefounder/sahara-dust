@@ -1,4 +1,22 @@
-export default function ContentCard({ card, voteCount, onUpvote }) {
+interface Card {
+  id: number;
+  date: string;
+  headline: string;
+  description: string;
+  readMoreLink: string;
+  tag: string;
+  voteCount: number;
+}
+
+export default function ContentCard({
+  card,
+  voteCount,
+  onUpvote,
+}: {
+  card: Card;
+  voteCount: number;
+  onUpvote: () => void;
+}) {
   return (
     <div className="max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
       <div className="flex items-center justify-between">

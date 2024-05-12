@@ -6,7 +6,7 @@ import { initialCardData } from "./card-data";
 export default function Main() {
   const [cardData, setCardData] = useState(initialCardData);
 
-  const handleUpvote = (id) => {
+  const handleUpvote = (id: number) => {
     setCardData((prevCardData) => {
       const updatedCardData = prevCardData.map((card) => {
         if (card.id === id) {
