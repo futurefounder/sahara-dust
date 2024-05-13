@@ -4,7 +4,7 @@ import { ReactTyped } from "react-typed";
 export default function Hero() {
   return (
     <>
-      <div className="relative pt-16 bg-gray-800 bg-opacity-25">
+      <div className="relative pt-16 bg-gray-800 bg-opacity-25 h-max">
         <video
           autoPlay
           loop
@@ -12,10 +12,7 @@ export default function Hero() {
           playsInline
           className="absolute inset-0 object-cover w-full h-full -z-10"
         >
-          <source
-            src="https://videos.pexels.com/video-files/5561389/5561389-uhd_3840_2160_25fps.mp4"
-            type="video/mp4"
-          />
+          <source src="sahara-dust-bg-video.mp4" type="video/mp4" />
         </video>
         <div className="relative ">
           {/* <svg
@@ -30,7 +27,7 @@ export default function Hero() {
           <div className="relative px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="flex flex-col items-center justify-between xl:flex-row">
               <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-10/12">
-                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+                <h2 className="max-w-lg mb-6 font-sans text-2xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                   Sahara Dust is{" "}
                   <ReactTyped
                     strings={[
@@ -38,7 +35,7 @@ export default function Hero() {
                       "not dangerous",
                       "hazardous",
                       "just car dirt",
-                      "a health ris",
+                      "a health risk",
                       "only bad sight",
                     ]}
                     loop
@@ -49,14 +46,14 @@ export default function Hero() {
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
                   The Sahara Dust Debate is confusing. <br />
-                  Let&apos; look at what science says. <br />
+                  Let&apos; look at science and research. <br />
                 </p>
                 <a
                   href="/"
                   aria-label=""
                   className="inline-flex items-center font-semibold tracking-wider text-white transition-colors duration-200 hover:text-amber-400"
                 >
-                  Learn more
+                  Dive in
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -72,7 +69,7 @@ export default function Hero() {
               <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                 <div className="rounded shadow-xl p-7 sm:p-10">
                   <h3 className="mb-4 text-xl font-semibold opacity-100 sm:text-center sm:mb-6 sm:text-2xl">
-                    Get updates
+                    Join the Dust Watch-List
                   </h3>
                   <form>
                     <div className="mb-1 sm:mb-2">
@@ -84,7 +81,7 @@ export default function Hero() {
                         placeholder="jane@dust.org"
                         required
                         type="text"
-                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-600 focus:outline-none focus:shadow-outline"
+                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-amber-600 focus:outline-none focus:shadow-outline"
                         id="email"
                         name="email"
                       />
@@ -94,11 +91,12 @@ export default function Hero() {
                         type="submit"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-black rounded shadow-md hover:bg-gray-800 focus:shadow-outline focus:outline-none"
                       >
-                        Subscribe
+                        Count Me In
                       </button>
                     </div>
                     <p className="text-xs text-gray-300 sm:text-sm">
-                      No spam. Unsubscribe at any time.
+                      No spam. Only relevant updates. <br /> Unsubscribe at any
+                      time.
                     </p>
                   </form>
                 </div>

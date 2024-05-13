@@ -22,14 +22,14 @@ export default function Navigation() {
           </a>
           <ul className="items-center hidden gap-6 md:flex">
             <li>
-              <a aria-label="how it works" href="#how-it-works">
-                <span className="flex items-center">
+              <a aria-label="studies" href="#">
+                <span className="flex items-center text-gray-200 hover:text-white">
                   {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     className="w-6 h-6 mr-1"
                   >
@@ -44,14 +44,14 @@ export default function Navigation() {
               </a>
             </li>
             <li>
-              <a aria-label="blog" href="/blog">
-                <span className="flex items-center">
+              <a aria-label="news" href="#">
+                <span className="flex items-center text-gray-200 hover:text-white">
                   {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     className="w-6 h-6 mr-1"
                   >
@@ -123,7 +123,7 @@ export default function Navigation() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       className="w-4 h-4 mr-1"
