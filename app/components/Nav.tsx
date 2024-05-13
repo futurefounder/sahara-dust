@@ -1,16 +1,149 @@
 "use client";
-import { useState } from "react";
 
 export default function Navigation() {
   return (
-    <header className="text-gray-100 body-font">
-      <div className="container flex flex-col flex-wrap items-center p-5 mx-auto md:flex-row">
-        <nav className="flex flex-wrap items-center text-base lg:w-2/5 md:ml-auto"></nav>
-        <a className="flex items-center order-first mb-4 font-medium text-gray-300 lg:order-none lg:w-1/5 title-font lg:items-center lg:justify-center md:mb-0">
-          <span className="ml-3 text-xl">Sahara-Dust.com</span>
-        </a>
-        <div className="inline-flex ml-5 lg:w-2/5 lg:justify-end lg:ml-0"></div>
-      </div>
+    <header className="fixed left-0 z-50 w-full top-4">
+      <nav className="h-16 flex backdrop-blur-md text-foreground bg-primary/80 px-4 mx-auto shadow-lg max-w-[1000px] rounded-lg">
+        <div className="mx-auto w-full flex items-center justify-between max-w-[1000px]">
+          <a
+            className="text-2xl hover:opacity-80"
+            aria-label="homepage"
+            href="/"
+          >
+            <div className="flex items-center gap-2">
+              <h2
+                className="text-2xl font-semibold text-foreground animate-text-gradient bg-gradient-to-r from-[#fde68a] via-[#d97706] to-[#fef3c7] 
+    bg-[200%_auto] bg-clip-text text-transparent"
+              >
+                Sahara-<span className="font-light">Dust</span>
+                <span className="text-base"> .com</span>
+              </h2>
+            </div>
+          </a>
+          <ul className="items-center hidden gap-6 md:flex">
+            <li>
+              <a aria-label="how it works" href="#how-it-works">
+                <span className="flex items-center">
+                  {" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6 mr-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+                    />
+                  </svg>
+                  Studies
+                </span>
+              </a>
+            </li>
+            <li>
+              <a aria-label="blog" href="/blog">
+                <span className="flex items-center">
+                  {" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 mr-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+                    />
+                  </svg>
+                  News{" "}
+                </span>
+              </a>
+            </li>
+            <li></li>
+            {/* <li>
+              <a
+                className="opacity-60 after:content-['SOON'] after:text-[8px] after:border after:rounded-sm after:p-0.5 after:text-foregorund after:ml-1"
+                aria-label="soon"
+                href="#"
+              >
+                Soon
+              </a>
+            </li> */}
+            <li></li>
+          </ul>
+          <div className="flex gap-8 md:hidden">
+            <button className="block lg:hidden">
+              {" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-label="nav-menu"
+              >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+            <div className="hidden absolute bg-background p-4 mt-[60px] right-0 w-full lg:relative lg:w-auto lg:bg-transparent lg:p-0 lg:mt-0 lg:flex text-white">
+              <ul className="flex flex-col items-center justify-center gap-4">
+                <li>
+                  <a aria-label="how it works" href="#how-it-works">
+                    How It Works
+                  </a>
+                </li>
+                <li>
+                  <a aria-label="blog" href="/blog">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/fashn-AI"
+                    aria-label="github"
+                    className="flex items-center"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-4 h-4 mr-1"
+                    >
+                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                      <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                    </svg>
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a aria-label="frequently-asked-questions" href="#faq">
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
   );
 }

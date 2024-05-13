@@ -2,23 +2,23 @@
 export const initialCardData = [
   {
     id: 1,
-    date: "Mar 10, 2024",
-    headline:
-      "Sahara Dust plume decreases air quality across Mediterranean region",
+    date: "Feb 14, 2024",
+    headline: "European Union's Earth Observation Programme",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nulla sit amet aliquam lacinia, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl. Nullam euismod, nulla sit amet aliquam lacinia, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl.",
-    readMoreLink: "#",
+      "Winter 2024 has witnessed a notable increase in the intensity and frequency of Saharan dust intrusions into Europe and Latin America, possibly linked to changes in atmospheric circulation patterns.",
+    readMoreLink:
+      "https://atmosphere.copernicus.eu/repeated-saharan-dust-intrusions-raise-questions-about-increasing-frequency",
     tag: "🌍 Environment",
     voteCount: 0,
   },
   {
     id: 2,
-    date: "Apr 15, 2024",
+    date: "May 10, 2020",
     headline:
-      "Exposure to Sahara Dust linked to increased asthma attacks in children",
+      "A study by researchers from the General Directorate of Public Health, Government of the Canary Islands, and various Spanish institutions focusing on epidemiology and public health",
     description:
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    readMoreLink: "#",
+      "Saharan Dust Days (SDDs) in the Canary Islands are associated with an increased risk of emergency hospital admissions for respiratory diseases, particularly COPD and asthma, with the effect being more pronounced during prolonged episodes, low-altitude dust transport, and medium to high PM10 levels.",
+    readMoreLink: "https://pubmed.ncbi.nlm.nih.gov/32402548",
     tag: "🫁 Respiratory Health",
     voteCount: 0,
   },

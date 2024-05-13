@@ -10,27 +10,38 @@ interface Card {
 
 export default function ContentCard({
   card,
-  voteCount,
   onUpvote,
+  onUnvote,
+  isVoted,
 }: {
   card: Card;
-  voteCount: number;
   onUpvote: () => void;
+  onUnvote: () => void;
+  isVoted: boolean;
 }) {
   return (
-    <div className="max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div className="max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md dark:bg-zinc-950 ">
       <div className="flex items-center justify-between">
         <span className="text-sm font-light text-gray-600 dark:text-gray-400">
           {card.date}
         </span>
         <div className="flex items-center">
-          <span className="mr-2">{voteCount}</span>
-          <button
-            className="px-1 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform rounded cursor-pointer hover:bg-gray-500"
-            onClick={onUpvote}
-          >
-            ⬆️
-          </button>
+          <span className="mr-2">{card.voteCount}</span>
+          {isVoted ? (
+            <button
+              className="px-1 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-600"
+              onClick={onUnvote}
+            >
+              ▼
+            </button>
+          ) : (
+            <button
+              className="px-1 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform rounded cursor-pointer bg-amber-700 hover:bg-amber-700"
+              onClick={onUpvote}
+            >
+              ▲
+            </button>
+          )}
         </div>
       </div>
       <div className="mt-2">
@@ -47,7 +58,8 @@ export default function ContentCard({
       <div className="flex items-center justify-between mt-4">
         <a
           href={card.readMoreLink}
-          className="text-blue-600 dark:text-blue-400 hover:underline"
+          target="_blank"
+          className="text-abmber-700 dark:text-amber-500 hover:underline"
         >
           Read more
         </a>
