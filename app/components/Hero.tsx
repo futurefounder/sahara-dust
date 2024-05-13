@@ -49,7 +49,7 @@ export default function Hero() {
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
                   The Sahara Dust Debate is confusing. <br />
-                  Let's look at what science says. <br />
+                  Let&apos; look at what science says. <br />
                 </p>
                 <a
                   href="/"
