@@ -1,7 +1,17 @@
 "use client";
 import { ReactTyped } from "react-typed";
+import { useState } from "react";
 
 export default function Hero() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    // Here, you can add your logic to send the email or perform any other desired action
+  };
+
   return (
     <>
       <div className="relative pt-16 bg-gray-800 bg-opacity-25 h-max">
@@ -71,7 +81,7 @@ export default function Hero() {
                   <h3 className="mb-4 text-xl font-semibold opacity-100 sm:text-center sm:mb-6 sm:text-2xl">
                     Join the Dust Watch-List
                   </h3>
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div className="mb-1 sm:mb-2">
                       <label
                         htmlFor="email"
@@ -81,7 +91,10 @@ export default function Hero() {
                         placeholder="jane@dust.org"
                         required
                         type="text"
-                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-amber-600 focus:outline-none focus:shadow-outline"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        disabled={submitted}
+                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none text-amber-950 focus:border-amber-600 focus:outline-none focus:shadow-outline"
                         id="email"
                         name="email"
                       />
@@ -89,10 +102,16 @@ export default function Hero() {
                     <div className="mt-4 mb-2 sm:mb-4">
                       <button
                         type="submit"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-black rounded shadow-md hover:bg-gray-800 focus:shadow-outline focus:outline-none"
+                        disabled={submitted}
+                        className="inline-flex items-center justify-center w-full h-12 px-6 mb-2 font-medium tracking-wide text-white transition duration-200 bg-black rounded shadow-md hover:bg-gray-800 focus:shadow-outline focus:outline-none"
                       >
-                        Count Me In
+                        {submitted ? "Thank you!" : "Count Me In"}
                       </button>
+                      {submitted && (
+                        <span className="bg-amber-100 text-green-800 text-xs font-bold mr-2 px-2.5 py-0.5 rounded ml-2">
+                          Success
+                        </span>
+                      )}
                     </div>
                     <p className="text-xs text-gray-300 sm:text-sm">
                       No spam. Only relevant updates. <br /> Unsubscribe at any

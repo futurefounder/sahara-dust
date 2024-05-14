@@ -44,9 +44,8 @@ export default function Navigation() {
               </a>
             </li>
             <li>
-              <a aria-label="news" href="#">
-                <span className="flex items-center text-gray-200 hover:text-white">
-                  {" "}
+              <span aria-label="news" href="#">
+                <span className="relative flex items-center text-gray-200 cursor-not-allowed">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -61,9 +60,12 @@ export default function Navigation() {
                       d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
                     />
                   </svg>
-                  News{" "}
+                  News
+                  <span className="bg-amber-50 text-gray-500 text-xs font-medium ml-2 px-1.5 py-0.5 rounded absolute -top-3 -right-3 opacity-75 translate-x-2 -translate-y-1">
+                    Soon
+                  </span>
                 </span>
-              </a>
+              </span>
             </li>
             <li></li>
             {/* <li>
