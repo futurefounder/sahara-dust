@@ -8,7 +8,7 @@ export default function Hero() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleSmoothScroll = (event) => {
+  const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     smoothScrollToElement("studies");
   };

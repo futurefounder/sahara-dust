@@ -5,7 +5,8 @@ import smoothScrollToElement from "../utils/SmoothScroll";
 
 export default function Navigation() {
   const newsRef = useRef<HTMLAnchorElement>(null);
-  const handleSmoothScroll = (event) => {
+
+  const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     smoothScrollToElement("studies");
   };

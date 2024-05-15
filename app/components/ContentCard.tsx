@@ -94,7 +94,7 @@ export default function ContentCard({
   return (
     <>
       <div className="max-w-2xl px-8 py-4 mt-16 bg-white rounded-lg shadow-md dark:bg-zinc-950">
-        <div class="flex flex-col text-center w-full mb-20"></div>
+        <div className="flex flex-col w-full mb-20 text-center"></div>
         <div className="flex items-center justify-between">
           <span className="text-sm font-light text-gray-600 dark:text-gray-400">
             {card.date}
@@ -105,7 +105,7 @@ export default function ContentCard({
                 <svg
                   aria-hidden="true"
                   role="status"
-                  class="inline w-4 h-4 me-3 text-gray-200 animate-spin dark:text-gray-600"
+                  className="inline w-4 h-4 text-gray-200 me-3 animate-spin dark:text-gray-600"
                   viewBox="0 0 100 101"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
