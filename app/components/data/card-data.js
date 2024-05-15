@@ -3,7 +3,7 @@ export const initialCardData = [
   {
     id: 1,
     date: "Feb 14, 2024",
-    headline: "European Union's Earth Observation Programme",
+    headline: "European Union's Earth Observation Programm",
     description:
       "Winter 2024 has witnessed a notable increase in the intensity and frequency of Saharan dust intrusions into Europe and Latin America, possibly linked to changes in atmospheric circulation patterns.",
     readMoreLink:

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import ContentCard from "./ContentCard";
-import { initialCardData } from "./card-data";
+import { initialCardData } from "./data/card-data";
 
 interface Card {
   id: number;

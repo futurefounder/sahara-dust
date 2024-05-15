@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface Card {
   id: number;
   date: string;
@@ -19,25 +21,75 @@ export default function ContentCard({
   onUnvote: () => void;
   isVoted: boolean;
 }) {
+  const [voteCount, setVoteCount] = useState(card.voteCount);
+
+  const handleUpvote = async () => {
+    try {
+      const res = await fetch("/api/vote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: card.id }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to register vote");
+      }
+
+      const data = await res.json();
+      console.log(data.message);
+      setVoteCount(voteCount + 1);
+      onUpvote();
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const handleUnvote = async () => {
+    try {
+      const res = await fetch("/api/unvote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: card.id }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to remove vote");
+      }
+
+      const data = await res.json();
+      console.log(data.message);
+      setVoteCount(voteCount - 1);
+      onUnvote();
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
-    <div className="max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md dark:bg-zinc-950 ">
+    <div className="max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md dark:bg-zinc-950">
       <div className="flex items-center justify-between">
         <span className="text-sm font-light text-gray-600 dark:text-gray-400">
           {card.date}
         </span>
         <div className="flex items-center">
-          <span className="mr-2">{card.voteCount}</span>
+          <span className="mr-2">{voteCount}</span>
           {isVoted ? (
             <button
               className="px-1 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-600"
-              onClick={onUnvote}
+              onClick={handleUnvote}
             >
               ▼
             </button>
           ) : (
             <button
               className="px-1 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform rounded cursor-pointer bg-amber-700 hover:bg-amber-700"
-              onClick={onUpvote}
+              onClick={handleUpvote}
             >
               ▲
             </button>
