@@ -1,6 +1,10 @@
 "use client";
 
+import { useRef } from "react";
+
 export default function Navigation() {
+  const newsRef = useRef<HTMLAnchorElement>(null);
+
   return (
     <header className="fixed left-0 z-50 w-full top-4">
       <nav className="h-16 flex backdrop-blur-md text-foreground bg-primary/80 px-4 mx-auto shadow-lg max-w-[1000px] rounded-lg">
@@ -44,7 +48,7 @@ export default function Navigation() {
               </a>
             </li>
             <li>
-              <span aria-label="news" href="#">
+              <span aria-label="news" ref={newsRef}>
                 <span className="relative flex items-center text-gray-200 cursor-not-allowed">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
