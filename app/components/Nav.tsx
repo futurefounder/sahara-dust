@@ -1,9 +1,14 @@
 "use client";
 
 import { useRef } from "react";
+import smoothScrollToElement from "../utils/SmoothScroll";
 
 export default function Navigation() {
   const newsRef = useRef<HTMLAnchorElement>(null);
+  const handleSmoothScroll = (event) => {
+    event.preventDefault();
+    smoothScrollToElement("studies");
+  };
 
   return (
     <header className="fixed left-0 z-50 w-full top-4">
@@ -26,7 +31,11 @@ export default function Navigation() {
           </a>
           <ul className="items-center hidden gap-6 md:flex">
             <li>
-              <a aria-label="studies" href="#">
+              <a
+                onClick={handleSmoothScroll}
+                aria-label="studies"
+                href="studies"
+              >
                 <span className="flex items-center text-gray-200 hover:text-white">
                   {" "}
                   <svg

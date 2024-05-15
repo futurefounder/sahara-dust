@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/unvote/route.js", "app/api/vote/route.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/utils/SmoothScroll.js", "app/api/unvote/route.js", "app/api/vote/route.js"],
   "exclude": ["node_modules"]
 }

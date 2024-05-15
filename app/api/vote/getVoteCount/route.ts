@@ -5,18 +5,18 @@ const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
 });
 
-export async function POST(req) {
-  const { id } = await req.json();
-  console.log("Received ID:", id); // Debug log
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get("id");
 
   if (!id) {
-    return NextResponse.json({ error: "Invalid article ID" }, { status: 400 });
+    return NextResponse.json({ error: "Missing article ID" }, { status: 400 });
   }
 
   try {
     const client = await pool.connect();
     const result = await client.query(
-      "UPDATE articles SET vote_count = vote_count - 1 WHERE id = $1 RETURNING vote_count",
+      "SELECT vote_count FROM articles WHERE id = $1",
       [id]
     );
     client.release();
@@ -25,11 +25,8 @@ export async function POST(req) {
       return NextResponse.json({ error: "Article not found" }, { status: 404 });
     }
 
-    console.log("Database result:", result.rows[0]); // Debug log
-    return NextResponse.json(
-      { message: "Vote removed", vote_count: result.rows[0].vote_count },
-      { status: 200 }
-    );
+    const voteCount = result.rows[0].vote_count;
+    return NextResponse.json({ vote_count: voteCount }, { status: 200 });
   } catch (error) {
     console.error("Database error:", error);
     return NextResponse.json(

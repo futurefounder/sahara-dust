@@ -1,11 +1,17 @@
 "use client";
 import { ReactTyped } from "react-typed";
 import { useState } from "react";
+import smoothScrollToElement from "../utils/SmoothScroll";
 
 export default function Hero() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const handleSmoothScroll = (event) => {
+    event.preventDefault();
+    smoothScrollToElement("studies");
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -84,9 +90,10 @@ export default function Hero() {
                   Let&apos; look at science and research. <br />
                 </p>
                 <a
-                  href="/"
+                  href="#studies"
                   aria-label=""
                   className="inline-flex items-center font-semibold tracking-wider text-white transition-colors duration-200 hover:text-amber-400"
+                  onClick={handleSmoothScroll}
                 >
                   Dive in
                   <svg
@@ -170,7 +177,7 @@ export default function Hero() {
                           </svg>
                           {error}
                         </span>
-                      )}
+                      )}{" "}
                       {submitted && (
                         <span className="bg-emerald-100 flex items-center text-black text-xs font-bold mr-2 px-2.5 py-0.5 rounded ml-2">
                           <svg
@@ -202,6 +209,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <div id="studies"></div>
     </>
   );
 }
