@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const StudyModal = ({ isOpen, onClose }) => {
+interface StudyModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const StudyModal: React.FC<StudyModalProps> = ({ isOpen, onClose }) => {
   const [isNotifyChecked, setIsNotifyChecked] = useState(false);
   const [email, setEmail] = useState("");
   const [link, setLink] = useState("");
@@ -10,15 +15,15 @@ const StudyModal = ({ isOpen, onClose }) => {
     setIsNotifyChecked(!isNotifyChecked);
   };
 
-  const handleEmailChange = (e) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const handleLinkChange = (e) => {
+  const handleLinkChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLink(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
