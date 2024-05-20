@@ -45,7 +45,7 @@ export const initialCardData = [
   {
     id: 5,
     date: "Nov 15, 2020",
-    headline: "SAir Quality and Health in Europe Worsened by Saharan Dust",
+    headline: "Air Quality and Health in Europe Worsened by Saharan Dust",
     description:
       "A study reveals that Saharan dust significantly impacts air quality in Europe, leading to thousands of deaths annually, with the highest effects seen in Spain and Italy.",
     readMoreLink:
