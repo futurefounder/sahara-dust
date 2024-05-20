@@ -1,14 +1,20 @@
 "use client";
 
-import { useRef } from "react";
+import { useState, useRef } from "react";
+import StudyModal from "../utils/StudyModal";
 import smoothScrollToElement from "../utils/SmoothScroll";
 
 export default function Navigation() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const newsRef = useRef<HTMLAnchorElement>(null);
 
   const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     smoothScrollToElement("studies");
+  };
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
@@ -58,49 +64,27 @@ export default function Navigation() {
               </a>
             </li>
             <li>
-              <span aria-label="news" ref={newsRef}>
-                <span className="relative flex items-center text-gray-200 cursor-not-allowed">
+              <span onClick={toggleModal} aria-label="post">
+                <span className="relative flex items-center text-gray-200 cursor-pointer hover:text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     className="w-6 h-6 mr-1"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
                     />
                   </svg>
                   Post
-                  <span className="bg-amber-50 text-gray-500 text-xs font-medium ml-2 px-1.5 py-0.5 rounded absolute -top-3.5 -right-3 opacity-75 translate-x-2 -translate-y-1">
-                    Soon
-                  </span>
                 </span>
               </span>
             </li>
-            {/* <li>
-              <span aria-label="about" ref={newsRef}>
-                <span className="relative flex items-center text-gray-200 cursor-not-allowed">
-                  What is this?
-                  <span className="bg-amber-50 text-gray-500 text-xs font-medium ml-2 px-1.5 py-0.5 rounded absolute -top-3.5 -right-3 opacity-75 translate-x-2 -translate-y-1">
-                    Soon
-                  </span>
-                </span>
-              </span>
-            </li> */}
             <li></li>
-            {/* <li>
-              <a
-                className="opacity-60 after:content-['SOON'] after:text-[8px] after:border after:rounded-sm after:p-0.5 after:text-foregorund after:ml-1"
-                aria-label="soon"
-                href="#"
-              >
-                Soon
-              </a>
-            </li> */}
             <li></li>
           </ul>
           <div className="flex gap-8 md:hidden">
@@ -154,7 +138,7 @@ export default function Navigation() {
                       strokeLinejoin="round"
                       className="w-4 h-4 mr-1"
                     >
-                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                       <path d="M9 18c-4.51 2-5-2-7-2"></path>
                     </svg>
                     GitHub
@@ -170,6 +154,7 @@ export default function Navigation() {
           </div>
         </div>
       </nav>
+      <StudyModal isOpen={isModalOpen} onClose={toggleModal} />
     </header>
   );
 }
