@@ -64,23 +64,33 @@ export default function Navigation() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth="1.5"
+                    stroke-width="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6 mr-1"
+                    class="w-6 h-6 mr-1"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
                     />
                   </svg>
-                  News
-                  <span className="bg-amber-50 text-gray-500 text-xs font-medium ml-2 px-1.5 py-0.5 rounded absolute -top-3 -right-3 opacity-75 translate-x-2 -translate-y-1">
+                  Post
+                  <span className="bg-amber-50 text-gray-500 text-xs font-medium ml-2 px-1.5 py-0.5 rounded absolute -top-3.5 -right-3 opacity-75 translate-x-2 -translate-y-1">
                     Soon
                   </span>
                 </span>
               </span>
             </li>
+            {/* <li>
+              <span aria-label="about" ref={newsRef}>
+                <span className="relative flex items-center text-gray-200 cursor-not-allowed">
+                  What is this?
+                  <span className="bg-amber-50 text-gray-500 text-xs font-medium ml-2 px-1.5 py-0.5 rounded absolute -top-3.5 -right-3 opacity-75 translate-x-2 -translate-y-1">
+                    Soon
+                  </span>
+                </span>
+              </span>
+            </li> */}
             <li></li>
             {/* <li>
               <a

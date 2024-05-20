@@ -108,9 +108,9 @@ export default function ContentCard({
         >
           Read more
         </a>
-        <a className="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
+        {/* <a className="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
           {card.tag}
-        </a>
+        </a> */}
       </div>
     </div>
   );
