@@ -3,11 +3,6 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
-import { dev } from "$app/environment";
-import { inject } from "@vercel/analytics";
-
-inject({ mode: dev ? "development" : "production" });
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children} <Analytics />
+      </body>
     </html>
   );
 }
