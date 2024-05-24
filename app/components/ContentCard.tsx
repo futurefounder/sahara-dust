@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Vote from "../utils/Vote";
 
 interface Card {
   id: number;
@@ -14,7 +15,7 @@ export default function ContentCard({
   card,
   onUpvote,
   onUnvote,
-  isVoted,
+  isVoted: initialIsVoted,
 }: {
   card: Card;
   onUpvote: () => void;
@@ -22,6 +23,7 @@ export default function ContentCard({
   isVoted: boolean;
 }) {
   const [loading, setLoading] = useState(true);
+  const [voted, setVoted] = useState(initialIsVoted);
 
   useEffect(() => {
     const fetchVoteCount = async () => {
@@ -41,6 +43,16 @@ export default function ContentCard({
 
     fetchVoteCount();
   }, [card.id]);
+
+  const handleUpvote = () => {
+    onUpvote();
+    setVoted(true);
+  };
+
+  const handleUnvote = () => {
+    onUnvote();
+    setVoted(false);
+  };
 
   return (
     <div className="max-w-2xl px-12 py-8 mt-16 bg-white rounded-lg shadow-md dark:bg-zinc-950">
@@ -69,23 +81,34 @@ export default function ContentCard({
                 />
               </svg>
             ) : (
-              <span className="mr-2">{card.voteCount}</span>
+              <span className="mb-4 mr-2">{card.voteCount}</span>
             )}
           </div>
-          {isVoted ? (
-            <button
-              className="px-1 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-600"
-              onClick={onUnvote}
-            >
-              ▼
-            </button>
+          {voted ? (
+            <>
+              <div className="flex flex-col w-12">
+                <button
+                  className="px-1 py-1 text-sm font-bold text-center text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-600"
+                  onClick={handleUnvote}
+                  title="Downvote"
+                >
+                  ▼
+                </button>{" "}
+                <Vote textColor="gray-400" isVoted={voted} />
+              </div>
+            </>
           ) : (
-            <button
-              className="px-1 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform rounded cursor-pointer bg-amber-700 hover:bg-amber-700"
-              onClick={onUpvote}
-            >
-              ▲
-            </button>
+            <>
+              <div className="flex flex-col w-12 ">
+                <button
+                  className="px-1 py-1 text-sm font-bold text-center text-gray-100 transition-colors duration-300 transform rounded cursor-pointer bg-amber-700 hover:bg-amber-700"
+                  onClick={handleUpvote}
+                >
+                  ▲
+                </button>{" "}
+                <Vote textColor="white" isVoted={voted} />
+              </div>
+            </>
           )}
         </div>
       </div>
@@ -108,9 +131,6 @@ export default function ContentCard({
         >
           Read more
         </a>
-        {/* <a className="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
-          {card.tag}
-        </a> */}
       </div>
     </div>
   );

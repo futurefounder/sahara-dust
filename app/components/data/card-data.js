@@ -111,16 +111,19 @@ export const initialCardData = [
     tag: "🌐 Global Impact",
     voteCount: 0,
   },
-  // {
-  //   id: 11,
-  //   date: "Oct 5, 2024",
-  //   headline: "Entry no 11",
-  //   description:
-  //     "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-  //   readMoreLink: "#",
-  //   tag: "🌐 Global Impact",
-  //   voteCount: 0,
-  // },
+  {
+    id: 11,
+    date: "Apr 08, 2024",
+    headline:
+      "Exceptionally Intense Saharan Dust Episode Through Western Europe",
+    description:
+      "An exceptionally intense Saharan dust episode affected western Europe, with high dust concentrations reaching as far north as Germany. This is the third such episode in two weeks, linked to changes in atmospheric circulation patterns, significantly impacting air quality.",
+    readMoreLink:
+      "https://atmosphere.copernicus.eu/new-exceptionally-intense-saharan-dust-episode-through-western-europe#:~:text=The%20observed%20trend%20is%20consistent,with%20changes%20in%20atmospheric%20circulation.",
+    tag: "🌍 Environment",
+    voteCount: 0,
+  },
+
   // {
   //   id: 12,
   //   date: "Oct 5, 2024",
