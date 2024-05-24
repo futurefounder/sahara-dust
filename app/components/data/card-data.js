@@ -110,7 +110,7 @@ export const initialCardData = [
       "https://www.sciencedirect.com/science/article/pii/S1352231024001973",
     tag: "🌐 Global Impact",
     voteCount: 0,
-  },
+  },      
   {
     id: 11,
     date: "Apr 08, 2024",

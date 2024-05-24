@@ -19,18 +19,15 @@ export default function Navigation() {
 
   return (
     <header className="fixed left-0 z-50 w-full top-4">
-      <nav className="h-16 flex backdrop-blur-md text-foreground bg-primary/80 px-4 mx-auto shadow-lg max-w-[1000px] rounded-lg">
-        <div className="mx-auto w-full flex items-center justify-between max-w-[1000px]">
+      <nav className="h-16 flex bg-zinc-800 z-0 backdrop-blur-md text-foreground px-4 mx-auto shadow-lg max-w-[1000px] rounded-lg">
+        <div className="mx-auto z-10 w-full flex items-center justify-between max-w-[1000px]">
           <a
             className="text-2xl hover:opacity-80"
             aria-label="homepage"
             href="/"
           >
             <div className="flex items-center gap-2">
-              <h2
-                className="text-2xl font-semibold text-foreground animate-text-gradient bg-gradient-to-r from-[#fde68a] via-[#d97706] to-[#fef3c7] 
-    bg-[200%_auto] bg-clip-text text-transparent"
-              >
+              <h2 className="text-2xl font-semibold text-white">
                 Sahara-<span className="font-light">Dust</span>
                 <span className="text-base"> .com</span>
               </h2>

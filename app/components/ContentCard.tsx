@@ -55,18 +55,16 @@ export default function ContentCard({
   };
 
   return (
-    <div className="max-w-2xl px-12 py-8 mt-16 bg-white rounded-lg shadow-md dark:bg-zinc-950">
+    <div className="max-w-2xl px-12 py-8 mt-16 rounded-lg shadow-md bg-zinc-950">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-light text-gray-600 dark:text-gray-400">
-          {card.date}
-        </span>
+        <span className="text-sm font-light text-gray-400">{card.date}</span>
         <div className="flex items-center">
           <div className="flex items-center">
             {loading ? (
               <svg
                 aria-hidden="true"
                 role="status"
-                className="inline w-4 h-4 text-gray-200 me-3 animate-spin dark:text-gray-600"
+                className="inline w-4 h-4 text-gray-600 me-3 animate-spin"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,19 +113,17 @@ export default function ContentCard({
       <div className="mt-2">
         <a
           href={card.readMoreLink}
-          className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
+          className="text-xl font-bold textwhite hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
         >
           {card.headline}
         </a>
-        <p className="mt-2 text-gray-600 dark:text-gray-300">
-          {card.description}
-        </p>
+        <p className="mt-2 text-gray-300 ">{card.description}</p>
       </div>
       <div className="flex items-center justify-between mt-4">
         <a
           href={card.readMoreLink}
           target="_blank"
-          className="text-abmber-700 dark:text-amber-500 hover:underline"
+          className="text-amber-600 hover:underline"
         >
           Read more
         </a>
