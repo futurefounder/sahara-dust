@@ -113,7 +113,7 @@ export default function ContentCard({
       <div className="mt-2">
         <a
           href={card.readMoreLink}
-          className="text-xl font-bold textwhite hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
+          className="text-xl font-bold text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
         >
           {card.headline}
         </a>
