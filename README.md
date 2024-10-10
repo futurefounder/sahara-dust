@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sahara Dust
 
-## Getting Started
+Sahara Dust is a personal project aimed at exploring Next.js development while building a platform that provides information on Saharan dust events. The site focuses on presenting research, articles, and real-time data about Saharan dust's environmental and health impacts.
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project is part of my learning journey with **Next.js** and **Postgres**, along with other modern web technologies. Sahara Dust features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Post submission system**: Users can submit studies or articles.
+- **Voting system**: Users can upvote studies to increase visibility.
+- **Newsletter subscription**: Visitors can subscribe to receive updates via email.
+- **Real-time data**: Future plans to integrate data tracking.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Frontend**: Next.js 14.2.3
+- **Database**: PostgreSQL (hosted on Vercel)
+- **Styling**: Tailwind CSS
+- **Backend**: Node.js API routes
+- **UI Components**: React with TypeScript, custom modals
+- **State Management**: React's Context API
+- **Tools**:
+  - **React Spinners** for loading animations
+  - **React Toastify** for notifications
+  - **React Tooltip** for hover-based tooltips
+  - **React Typed** for dynamic text
 
-## Learn More
+## Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
+Here’s an overview of the main folders and their purposes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **app**:
+  - `api/submit-link`: Handles user submissions of links or studies.
+  - `api/subscribe`: Handles newsletter subscription requests.
+  - `api/vote` & `api/unvote`: Manages the voting system.
+- **components**:
+  - `StudyModal.tsx`: Modal component for submitting or viewing studies.
+  - `Vote.tsx`: Component to handle user votes on studies.
+  - `utils/SmoothScroll.js`: Utility for smooth scrolling functionality.
